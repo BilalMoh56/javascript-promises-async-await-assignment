@@ -45,3 +45,16 @@
 
 
 //END OF ASSIGNMENT
+ 
+// Async Method:
+
+async function getCatFacts(numFacts) {
+  try {
+    let response = await fetch(`https://catfact.ninja/facts?limit=${numFacts}`);
+    let json = await response.json();
+    return json;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
